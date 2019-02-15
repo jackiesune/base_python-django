@@ -1,0 +1,13 @@
+{% extends 'learn_blogs/base.html' %}
+
+{% block content %}
+<p>The topic is :{{topic}} </p>
+	<ul>
+		<p>the entries of {{ topic }} is :</p>
+		{% for entry in entries %}
+		<li>{{ entry}}</li>
+		{% empty %}
+		<p>this topic has no entry</p>
+		{% endfor %}
+	</ul>
+{% endblock content %}
