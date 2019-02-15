@@ -6,8 +6,10 @@
 		<p>the entries of {{ topic }} is :</p>
 		{% for entry in entries %}
 		<li>{{ entry}}</li>
+		<a href="{% url 'learn_blogs:edit_entry' entry.id %}">edit entry</a>
 		{% empty %}
 		<p>this topic has no entry</p>
 		{% endfor %}
 	</ul>
+<p><a href="{% url 'learn_blogs:new_entry' topic.id %}">new entry</a></p>
 {% endblock content %}
