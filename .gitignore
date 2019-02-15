@@ -2,3 +2,5 @@ __pycache__/*
 bolg/*
 learn_blog/__pycache__/
 learn_blogs/__pycache__/
+*/__pycache__/
+learn_blogs/migrations/__pycache__/
