@@ -1,17 +1,11 @@
 {% extends 'learn_blogs/base.html' %}
 
-{% block header %}
-<h3>Topics:</h3>
-{% endblock header %}
-
 {% block content %}
 <p><a href="{% url 'learn_blogs:new_topic' %}">new topic</a></p>
 <p>Topics:</p>
 	<ul>
 		{% for topic in topics %}
-		<li>
-			<h3><a href="{% url 'learn_blogs:topic' topic.id %}">{{ topic }}</a></li>
-			</h3>
+		<li><a href="{% url 'learn_blogs:topic' topic.id %}">{{ topic }}</a></li>
 		{% empty %}
 		<p>You has not put in any topics!</p>
 		{% endfor %}

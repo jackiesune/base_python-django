@@ -1,0 +1,17 @@
+<p>Learing Log</p>
+
+<p>学习笔记帮助大家一起进步</p>
+<p>
+	<a href="{% url 'learn_blogs:index' %}">Index</a>
+	<a href="{% url 'learn_blogs:topics' %}">topics</a>
+
+	{% if user.is_authenticated %}
+	Hello,{{user.name}}
+	<a href="{% url 'users:logout' %}">Logout</a>
+	{% else %}
+	<a href="{% url 'users:login' %}">Login In</a>
+	<a href="{% url 'users:register' %}">Register</a>
+	{% endif %}
+</p>
+{% block content %}{% endblock content %}
+
