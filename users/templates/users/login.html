@@ -1,0 +1,14 @@
+{% extends 'learn_blogs/base.html' %}
+
+{% block content %}
+
+{% if form.error %}
+<p> Your username or password cann't macht,please try again!</p>
+{% endif %}
+<form action="{% url 'users:login' %}" method="POST">
+	{% csrf_token %}
+	{{ form.as_p}}
+<button name='submit'>Login in</button>
+<input name='next' type='hidden' value="{% url 'learn_blogs:index' %}">
+</form>
+{% endblock content %}
